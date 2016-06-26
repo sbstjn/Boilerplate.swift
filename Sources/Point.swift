@@ -16,7 +16,7 @@ public class Point: CustomStringConvertible {
         self.y = y
     }
 
-    public func distance(_ point: Point) -> Double {
+    public func distance(point: Point) -> Double {
         return sqrt((self.x - point.x)*(self.x - point.x) + (self.y - point.y)*(self.y - point.y))
     }
 
