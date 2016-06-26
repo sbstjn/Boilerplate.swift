@@ -3,5 +3,6 @@ import XCTest
 @testable import BoilerplateTestSuite
 
 XCTMain([
-	testCase(PointTests.allTests)
+	testCase(PointTests.allTests),
+	testCase(LineTests.addTests),
 ])
