@@ -16,10 +16,12 @@ public class Line: CustomStringConvertible {
         self.b = b
     }
     
+    public var slope: Double {
+        return (a.y - b.y) / (a.x - b.x)
+    }
+    
     public func contains(p: Point) -> Bool {
-        let m = (a.y - b.y) / (a.x - b.x)
-
-        return p.y == m * (p.x - a.x) + a.y
+        return p.y == self.slope * (p.x - a.x) + a.y
     }
         
     public var description: String {
