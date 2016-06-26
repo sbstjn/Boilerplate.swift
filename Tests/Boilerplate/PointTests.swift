@@ -24,7 +24,6 @@ class PointTests: XCTestCase {
 
         XCTAssertEqual(a.distance(point: b), b.distance(point: a))
         XCTAssertEqual(a.distance(point: b), 5)
-
     }
 
 }
