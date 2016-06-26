@@ -4,5 +4,5 @@ import XCTest
 
 XCTMain([
 	testCase(PointTests.allTests),
-	testCase(LineTests.addTests),
+	testCase(LineTests.allTests),
 ])
