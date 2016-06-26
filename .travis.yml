@@ -1,0 +1,35 @@
+matrix:
+  include:
+    - script:
+        - make test
+        - make test-tv
+        - make test-ios
+        - make test-watch
+      os: osx
+      osx_image: xcode7.3
+      language: objective-c
+    - script:
+        - make test
+        - make test-tv
+        #- make test-ios
+        - make test-watch
+      os: osx
+      osx_image: xcode8
+      language: objective-c
+    - script:
+        - swift build && swift test
+      sudo: required
+      dist: trusty
+      language: generic
+      before_install:
+        - wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import -
+        - cd ..
+        - export SWIFT_VERSION="swift-3.0-preview-1"
+        - wget https://swift.org/builds/$SWIFT_VERSION/ubuntu1404/$SWIFT_VERSION/$SWIFT_VERSION-ubuntu14.04.tar.gz
+        - tar xzf $SWIFT_VERSION-ubuntu14.04.tar.gz
+        - export PATH="${PWD}/${SWIFT_VERSION}-ubuntu14.04/usr/bin:${PATH}"
+        - export LD_LIBRARY_PATH="${PWD}/${SWIFT_VERSION}-ubuntu14.04/usr/lib/swift/linux/:$LD_LIBRARY_PATH"
+        # get back home
+        - cd Boilerplate.swift
+notifications:
+  email: false
