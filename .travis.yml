@@ -4,7 +4,7 @@ matrix:
         - make test
         - make test-tv
         #- make test-ios
-        - make test-watch
+        #- make test-watch
       os: osx
       osx_image: xcode8
       language: objective-c
