@@ -3,14 +3,6 @@ matrix:
     - script:
         - make test
         - make test-tv
-        - make test-ios
-        - make test-watch
-      os: osx
-      osx_image: xcode7.3
-      language: objective-c
-    - script:
-        - make test
-        - make test-tv
         #- make test-ios
         - make test-watch
       os: osx
