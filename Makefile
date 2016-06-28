@@ -9,16 +9,16 @@ endif
 clean:
 	$(XCODEBUILD) clean -project $(MODULE_NAME).xcodeproj
 
-test: clean
+test:
 	$(XCODEBUILD) test -project $(MODULE_NAME).xcodeproj -scheme $(MODULE_NAME)-OSX | xcpretty -c
 
-test-ios: clean
+test-ios:
 	$(XCODEBUILD) test -project $(MODULE_NAME).xcodeproj -scheme $(MODULE_NAME)-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c
 
-test-tv: clean
+test-tv:
 	$(XCODEBUILD) test -project $(MODULE_NAME).xcodeproj -scheme $(MODULE_NAME)-tvOS -sdk appletvsimulator -destination 'platform=tvOS Simulator,name=Apple TV 1080p' | xcpretty -c
 
-test-watch: clean
+test-watch:
 	$(XCODEBUILD) build -project $(MODULE_NAME).xcodeproj -scheme $(MODULE_NAME)-watchOS -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 42mm' | xcpretty -c
 
 docker-build:
