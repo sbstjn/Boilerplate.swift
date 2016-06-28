@@ -1,0 +1,10 @@
+*.xcodeproj
+
+.git
+.build
+.DS_Store
+.travis.yml
+
+build
+README.md
+LICENSE.md
